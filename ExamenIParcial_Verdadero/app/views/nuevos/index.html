@@ -1,0 +1,29 @@
+ 
+<html>
+    <head>
+        <title>Contacto</title>
+        <link rel='stylesheet' href='estilos.css'>
+    </head>
+    <body>
+
+<div align="center">
+<img  src="images/canvas.png" width="150" height="150"/>
+
+</div>
+<% @nuevos.each do |nuevo| %>
+        <form class='contacto'>
+           
+            <div><label>Tu Nombre:</label> <%= nuevo.Name_user %></div>
+            <div><label>Tu Email:</label>  <%= nuevo.Email %></div>
+            <div><label>Mensaje:</label> <%= nuevo.Message %></div>
+            
+         <%= link_to 'Show', nuevo %>
+        <%= link_to 'Edit', edit_nuevo_path(nuevo) %>
+        <%= link_to 'Destroy', nuevo, method: :delete, data: { confirm: 'Are you sure?' } %>
+        
+        </form>
+
+    </body>
+<% end %>
+ 
+</html>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Nuevos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name user</th>
+      <th>Email</th>
+      <th>Message</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nuevos.each do |nuevo| %>
+      <tr>
+        <td><%= nuevo.Name_user %></td>
+        <td><%= nuevo.Email %></td>
+        <td><%= nuevo.Message %></td>
+        <td><%= link_to 'Show', nuevo %></td>
+        <td><%= link_to 'Edit', edit_nuevo_path(nuevo) %></td>
+        <td><%= link_to 'Destroy', nuevo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+ <%= link_to 'New Nuevo', new_nuevo_path %>
